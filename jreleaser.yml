@@ -1,0 +1,38 @@
+project:
+  name: '{{projectName}}'
+  description: Zero JDK Core Library
+  inceptionYear: '2025'
+  authors:
+    - Julien May
+  links:
+    homepage: https://github.com/zero-jdk/zero-jdk-core
+    documentation: https://github.com/zero-jdk/zero-jdk-core
+  license: Apache-2.0
+
+environment:
+  properties:
+    artifactsDir: target
+
+release:
+  github:
+    overwrite: true
+    changelog:
+      formatted: ALWAYS
+      preset: conventional-commits
+      contributors:
+        format: '- {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}'
+
+distributions:
+  zero-jdk-core:
+    type: JAVA_BINARY
+    artifacts:
+      - path: 'target/{{projectArtifactId}}-{{projectVersion}}.jar'
+
+deploy:
+  maven:
+    github:
+      zero-jdk-core:
+        url: https://maven.pkg.github.com/zero-jdk/zero-jdk-core
+        applyMavenCentralRules: true
+        sourceJar: true
+        javadocJar: false
