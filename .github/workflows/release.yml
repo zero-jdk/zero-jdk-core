@@ -33,7 +33,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Build, test and prepare deployment
-        run: ./mvnw clean deploy -DaltDeploymentRepository=local::file:./target/staging-deploy
+        run: ./mvnw clean package
 
       - name: Release
 #        if: github.event_name == 'push' && (github.ref == 'refs/heads/main')
