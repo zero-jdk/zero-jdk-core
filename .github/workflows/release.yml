@@ -36,7 +36,7 @@ jobs:
         run: ./mvnw clean package
 
       - name: Release
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main')
+#        if: github.event_name == 'push' && (github.ref == 'refs/heads/main')
         env:
           JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./mvnw jreleaser:full-release
