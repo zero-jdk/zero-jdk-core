@@ -36,3 +36,5 @@ deploy:
         applyMavenCentralRules: true
         sourceJar: true
         javadocJar: false
+        stagingRepositories:
+          - target/staging-deploy
