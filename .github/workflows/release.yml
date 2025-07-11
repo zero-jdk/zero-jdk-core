@@ -1,11 +1,13 @@
-name: Release JDK Core
+name: Build and Release
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  release:
+  build-and-release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -30,10 +32,11 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Build
+      - name: Build and Test
         run: ./mvnw clean package verify
 
       - name: Release
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main')
         env:
           JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./mvnw jreleaser:full-release
