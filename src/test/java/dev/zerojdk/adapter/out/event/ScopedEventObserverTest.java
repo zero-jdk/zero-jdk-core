@@ -11,6 +11,7 @@ import static org.mockito.Mockito.*;
 
 class ScopedEventObserverTest {
     @Test
+    @SuppressWarnings("unchecked")
     void registersObserversAndClosesThemOnClose() {
         // Given
         DomainEventObserver domainEventObserver = mock(DomainEventObserver.class);

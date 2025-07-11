@@ -60,6 +60,7 @@ class PosixPermissionsTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     void setPosixFilePermissionsShouldNotSetPermissionsWhenNotSupported() {
         // Given
         Path mockPath = mock(Path.class);

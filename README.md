@@ -1,6 +1,6 @@
 # Zero JDK Core
 
-`zerojdk-core` is the foundational library of the Zero JDK ecosystem. It encapsulates all domain logic related to JDK management, catalog operations, and build tool integration. Designed with reusability in mind, it serves as the core engine for CLI tools, IDE plugins, and other developer-facing integrations.
+`zero-jdk-core` is the foundational library of the Zero JDK ecosystem. It encapsulates all domain logic related to JDK management, catalog operations, and build tool integration. Designed with reusability in mind, it serves as the core engine for CLI tools, IDE plugins, and other developer-facing integrations.
 
 The library supports downloading and installing JDK distributions, managing a structured catalog of available versions, and applying consistent configuration rules across local and global contexts. It also enables wrapper script generation (similar to mvnw or gradlew) for reproducible builds, and integrates with shell environments to support seamless JDK version switching from the terminal.
 
@@ -20,8 +20,8 @@ To use this library in your project, add it as a dependency via Maven or Gradle:
 
 <dependencies>
     <dependency>
-        <groupId>dev.zerojdk</groupId>
-        <artifactId>zerojdk-core</artifactId>
+        <groupId>dev.zero-jdk</groupId>
+        <artifactId>zero-jdk-core</artifactId>
         <version>0.1.0</version>
     </dependency>
 </dependencies>
@@ -41,7 +41,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'dev.zerojdk:zerojdk-core:0.1.0'
+    implementation 'dev.zero-jdk:zero-jdk-core:0.1.0'
 }
 ```
 

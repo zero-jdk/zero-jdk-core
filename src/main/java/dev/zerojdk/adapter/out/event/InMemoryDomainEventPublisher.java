@@ -14,6 +14,7 @@ import java.util.function.Consumer;
 public class InMemoryDomainEventPublisher implements DomainEventPublisher, DomainEventObserver {
     private final Map<Class<?>, List<Consumer<DomainEvent>>> listeners = new HashMap<>();
 
+    @SuppressWarnings("unchecked")
     public <T extends DomainEvent> Observer register(Class<T> eventType, Consumer<T> listener) {
         listeners.computeIfAbsent(eventType, a -> new ArrayList<>())
             .add((Consumer<DomainEvent>) listener);
