@@ -32,6 +32,7 @@ deploy:
   maven:
     github:
       zero-jdk-core:
+        active: ALWAYS
         url: https://maven.pkg.github.com/zero-jdk/zero-jdk-core
         applyMavenCentralRules: true
         sourceJar: true
