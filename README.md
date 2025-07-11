@@ -14,7 +14,7 @@ To use this library in your project, add it as a dependency via Maven or Gradle:
 <repositories>
     <repository>
         <id>github</id>
-        <url>https://maven.pkg.github.com/zero-jdk/zero-jdk</url>
+        <url>https://maven.pkg.github.com/zero-jdk/zero-jdk-core</url>
     </repository>
 </repositories>
 
@@ -32,11 +32,7 @@ To use this library in your project, add it as a dependency via Maven or Gradle:
 ```gradle
 repositories {
     maven {
-        url = uri("https://maven.pkg.github.com/zero-jdk/zero-jdk")
-        credentials {
-            username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
-            password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
-        }
+        url = uri("https://maven.pkg.github.com/zero-jdk/zero-jdk-core")
     }
 }
 
